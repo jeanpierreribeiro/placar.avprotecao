@@ -1,0 +1,15 @@
+{
+  "name": "placar-avep-lp",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "nuxt": "4.4.7"
+  },
+  "devDependencies": {}
+}
