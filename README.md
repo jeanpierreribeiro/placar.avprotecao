@@ -1,0 +1,2 @@
+# placar.avprotecao
+# placar.avprotecao
