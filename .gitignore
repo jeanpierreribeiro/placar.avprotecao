@@ -1,9 +1,9 @@
-node_modules
 .nuxt
 .output
-.data
-.nitro
-.cache
+node_modules
 dist
-__MACOSX
-*.log
+.env
+__MACOSX/
+/imagem-bola.png
+/imagem-jogadores.png
+/placar-torcida-avep.html

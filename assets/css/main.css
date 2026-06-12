@@ -31,6 +31,9 @@
     z-index: 0;
     overflow: hidden;
     pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(10,34,20,0.58), rgba(10,34,20,0.9)),
+      url('/imagem-bola.png') center center / cover no-repeat;
   }
 
   /* Field texture - subtle lines */
@@ -228,31 +231,6 @@
     animation: hero-in 0.7s 0.2s cubic-bezier(0.16,1,0.3,1) both;
   }
 
-  /* ─── HERO IMAGE ─── */
-  .hero-img-wrap {
-    position: relative;
-    width: 100%;
-    max-width: 520px;
-    margin: 20px auto -10px;
-    animation: hero-in 0.7s 0.3s cubic-bezier(0.16,1,0.3,1) both;
-  }
-
-  .hero-img-wrap img {
-    width: 100%;
-    display: block;
-    border-radius: 20px 20px 0 0;
-    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
-  }
-
-  .players-scene {
-    pointer-events: none;
-  }
-
-  @media (min-width: 768px) {
-    .hero-img-wrap { max-width: 600px; }
-  }
-
   /* ─── MAIN CONTENT ─── */
   .main-content {
     max-width: 600px;
@@ -273,6 +251,13 @@
     position: relative;
     overflow: hidden;
     animation: hero-in 0.7s 0.35s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  .hero .form-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 24px auto 20px;
+    text-align: left;
   }
 
   .form-card::before {
@@ -602,6 +587,12 @@
     border-radius: 24px;
     backdrop-filter: blur(20px);
     animation: hero-in 0.5s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  .hero .success-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 24px auto 20px;
   }
 
   .success-card.visible { display: block; }
