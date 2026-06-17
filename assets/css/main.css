@@ -1,8 +1,11 @@
 :root {
-    --green-deep:   #0a2214;
-    --green-field:  #0d2e1a;
-    --green-mid:    #1a4a2a;
+    --green-deep:   #071735;
+    --green-field:  #082456;
+    --green-mid:    #0b3f8f;
     --green-bright: #22c55e;
+    --haiti-blue:   #0057b8;
+    --haiti-red:    #d71920;
+    --haiti-white:  #f8fafc;
     --yellow:       #facc07;
     --yellow-dark:  #e0b800;
     --white:        #ffffff;
@@ -32,8 +35,8 @@
     overflow: hidden;
     pointer-events: none;
     background:
-      linear-gradient(180deg, rgba(10,34,20,0.58), rgba(10,34,20,0.9)),
-      url('/imagem-bola.png') center center / cover no-repeat;
+      linear-gradient(180deg, rgba(7,23,53,0.52), rgba(7,23,53,0.9)),
+      url('/imagem-bola-haiti.png') center center / cover no-repeat;
   }
 
   /* Field texture - subtle lines */
@@ -65,8 +68,8 @@
     inset: 0;
     background:
       radial-gradient(ellipse 60% 50% at 15% 0%, rgba(250,204,7,0.07) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 50% at 85% 0%, rgba(250,204,7,0.07) 0%, transparent 70%),
-      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(10,34,20,0.9) 0%, transparent 70%);
+      radial-gradient(ellipse 60% 50% at 85% 0%, rgba(215,25,32,0.14) 0%, transparent 70%),
+      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(7,23,53,0.9) 0%, transparent 70%);
   }
 
   /* Center circle */
@@ -142,7 +145,7 @@
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid rgba(255,255,255,0.08);
-    background: rgba(10,34,20,0.6);
+    background: rgba(7,23,53,0.66);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
@@ -265,7 +268,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--yellow), var(--green-bright), var(--yellow));
+    background: linear-gradient(90deg, var(--haiti-blue), var(--haiti-white), var(--haiti-red));
     background-size: 200% 100%;
     animation: shimmer 3s linear infinite;
   }
@@ -306,9 +309,10 @@
   }
 
   input[type="text"],
-  input[type="tel"] {
+  input[type="tel"],
+  select {
     width: 100%;
-    background: rgba(255,255,255,0.07);
+    background-color: rgba(255,255,255,0.07);
     border: 1.5px solid rgba(255,255,255,0.15);
     border-radius: 12px;
     color: var(--white);
@@ -320,19 +324,35 @@
     -webkit-appearance: none;
   }
 
+  select {
+    cursor: pointer;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, rgba(255,255,255,0.55) 50%), linear-gradient(135deg, rgba(255,255,255,0.55) 50%, transparent 50%);
+    background-position: calc(100% - 22px) 50%, calc(100% - 16px) 50%;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 44px;
+  }
+
+  select option {
+    color: var(--green-deep);
+  }
+
   input[type="text"]::placeholder,
   input[type="tel"]::placeholder {
     color: rgba(255,255,255,0.25);
   }
 
   input[type="text"]:focus,
-  input[type="tel"]:focus {
+  input[type="tel"]:focus,
+  select:focus {
     border-color: var(--yellow);
-    background: rgba(250,204,7,0.07);
+    background-color: rgba(250,204,7,0.07);
     box-shadow: 0 0 0 3px rgba(250,204,7,0.15);
   }
 
-  input.error {
+  input.error,
+  select.error {
     border-color: #f87171 !important;
     box-shadow: 0 0 0 3px rgba(248,113,113,0.15) !important;
   }
@@ -385,7 +405,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(250,204,7,0.04) 0%, transparent 60%);
+    background: linear-gradient(135deg, rgba(0,87,184,0.1) 0%, rgba(215,25,32,0.06) 45%, transparent 72%);
     pointer-events: none;
   }
 
@@ -439,18 +459,29 @@
     transform: translate(-50%, -50%);
   }
 
-  /* Morocco flag */
-  .flag-morocco {
-    background: #c1272d;
+  /* Haiti flag */
+  .flag-haiti {
+    background: linear-gradient(180deg, var(--haiti-blue) 0 50%, var(--haiti-red) 50% 100%);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .flag-morocco::after {
-    content: '✦';
-    font-size: 16px;
-    color: #006233;
+  .flag-haiti::before {
+    content: '';
+    width: 15px;
+    height: 10px;
+    background: var(--haiti-white);
+    border-radius: 1px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+    position: absolute;
+  }
+  .flag-haiti::after {
+    content: '';
+    width: 7px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--haiti-blue) 0 50%, var(--haiti-red) 50% 100%);
+    border-radius: 1px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -694,8 +725,8 @@
   /* ─── OFFER BLOCK ─── */
   .offer-block {
     margin-top: 40px;
-    background: linear-gradient(135deg, rgba(250,204,7,0.12) 0%, rgba(250,204,7,0.04) 100%);
-    border: 1.5px solid rgba(250,204,7,0.35);
+    background: linear-gradient(135deg, rgba(0,87,184,0.16) 0%, rgba(215,25,32,0.1) 52%, rgba(250,204,7,0.06) 100%);
+    border: 1.5px solid rgba(248,250,252,0.24);
     border-radius: 20px;
     padding: 28px 24px;
     text-align: center;
@@ -710,7 +741,7 @@
     top: -40px; right: -40px;
     width: 120px;
     height: 120px;
-    background: radial-gradient(circle, rgba(250,204,7,0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(215,25,32,0.18) 0%, transparent 70%);
     border-radius: 50%;
   }
 

@@ -53,7 +53,7 @@
       <span class="highlight">o placar?</span>
     </h1>
 
-    <p class="hero-sub">Comente seu palpite para Brasil x Marrocos e participe da campanha da AVEP.</p>
+    <p class="hero-sub">Comente seu palpite para Brasil x Haiti e participe da campanha da AVEP.</p>
     <p class="hero-promo">🏆 Acerte o placar e ganhe na hora <strong>75% de desconto</strong> na adesão!</p>
 
     <!-- Form card -->
@@ -72,6 +72,18 @@
           <label for="whatsapp">WhatsApp</label>
           <input ref="whatsappInput" type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="numeric">
           <p ref="waErr" class="error-msg" id="waErr">Informe um número de WhatsApp válido.</p>
+        </div>
+
+        <div class="field-group">
+          <label for="vehicle">Veículo</label>
+          <select ref="vehicleInput" id="vehicle" name="vehicle" required>
+            <option value="">Selecione uma opção</option>
+            <option value="Não tenho veículo">Não tenho veículo</option>
+            <option value="Carro">Carro</option>
+            <option value="moto">moto</option>
+            <option value="Veículo pesado">Veículo pesado</option>
+          </select>
+          <p ref="vehicleErr" class="error-msg" id="vehicleErr">Informe sua opção de veículo.</p>
         </div>
 
         <!-- Scoreboard inputs -->
@@ -95,18 +107,18 @@
             </div>
             <div class="score-separator">×</div>
             <div class="score-team">
-              <div class="score-flag flag-morocco"></div>
-              <span class="score-name">Marrocos</span>
+              <div class="score-flag flag-haiti"></div>
+              <span class="score-name">Haiti</span>
               <input
                 type="text"
                 inputmode="numeric"
                 class="score-input"
-                ref="scoreMoroccoInput"
-                id="scoreMorocco"
-                name="scoreMorocco"
+                ref="scoreHaitiInput"
+                id="scoreHaiti"
+                name="scoreHaiti"
                 maxlength="2"
                 placeholder="0"
-                aria-label="Placar de Marrocos"
+                aria-label="Placar do Haiti"
               >
             </div>
           </div>
@@ -149,7 +161,7 @@
         </div>
         <div class="step-card">
           <div class="step-num">2</div>
-          <p class="step-text">Informe seu palpite Brasil x Marrocos</p>
+          <p class="step-text">Informe seu palpite Brasil x Haiti</p>
         </div>
         <div class="step-card">
           <div class="step-num">3</div>
@@ -163,10 +175,10 @@
     </div>
 
     <!-- Offer block -->
-    <!-- Imagem da campanha: salve o arquivo como "imagem-jogadores.png" na mesma pasta do HTML -->
+    <!-- Imagem da campanha: salve o arquivo como "imagem-jogadores-haiti.png" na mesma pasta do HTML -->
     <div class="offer-block">
       <div class="offer-img-wrap">
-        <img src="/imagem-jogadores.png" alt="Jogadores disputando a bola - Brasil x Marrocos" onerror="this.parentElement.style.display='none'">
+        <img src="/imagem-jogadores-haiti.png" alt="Jogadores disputando a bola - Brasil x Haiti" onerror="this.parentElement.style.display='none'">
       </div>
       <div class="offer-badge">75%</div>
       <h2 class="offer-title">Condição especial do Mês da Torcida</h2>
@@ -190,20 +202,20 @@
 <script setup>
 useHead({
   htmlAttrs: { lang: 'pt-BR' },
-  title: 'Placar da Torcida AVEP – Brasil x Marrocos',
+  title: 'Placar da Torcida AVEP - Brasil x Haiti',
   meta: [
     { charset: 'UTF-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-    { name: 'description', content: 'Comente seu palpite para Brasil x Marrocos e participe da campanha da AVEP. Acerte o placar e ganhe 75% de desconto na adesão.' },
+    { name: 'description', content: 'Comente seu palpite para Brasil x Haiti e participe da campanha da AVEP. Acerte o placar e ganhe 75% de desconto na adesão.' },
     { name: 'robots', content: 'index, follow' },
-    { property: 'og:title', content: 'Placar da Torcida AVEP – Brasil x Marrocos' },
-    { property: 'og:description', content: 'Comente seu palpite para Brasil x Marrocos e participe da campanha da AVEP.' },
+    { property: 'og:title', content: 'Placar da Torcida AVEP - Brasil x Haiti' },
+    { property: 'og:description', content: 'Comente seu palpite para Brasil x Haiti e participe da campanha da AVEP.' },
     { property: 'og:type', content: 'website' },
-    { property: 'og:image', content: '/imagem-jogadores.png' },
+    { property: 'og:image', content: '/imagem-jogadores-haiti.png' },
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: 'Placar da Torcida AVEP – Brasil x Marrocos' },
-    { name: 'twitter:description', content: 'Comente seu palpite para Brasil x Marrocos e participe da campanha da AVEP.' },
-    { name: 'twitter:image', content: '/imagem-jogadores.png' }
+    { name: 'twitter:title', content: 'Placar da Torcida AVEP - Brasil x Haiti' },
+    { name: 'twitter:description', content: 'Comente seu palpite para Brasil x Haiti e participe da campanha da AVEP.' },
+    { name: 'twitter:image', content: '/imagem-jogadores-haiti.png' }
   ],
   link: [
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -233,7 +245,7 @@ fbq('track', 'PageView');`,
   ]
 })
 
-const SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzEKxV2siXxyX7XQC2_s0WQZaHeSRJcDseD0L2rHAlxjwSDEMBEKiu1ydREzUZ4nnmf/exec'
+const SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbycVIZ8ukyevSpheCliYX6qmmGk7oYCujpLxj-681RtjUlkTHUeU7_fOzo8LtwRj9gQ/exec'
 
 const confettiContainer = ref(null)
 const formCard = ref(null)
@@ -241,16 +253,18 @@ const successCard = ref(null)
 const registrationForm = ref(null)
 const nameInput = ref(null)
 const whatsappInput = ref(null)
+const vehicleInput = ref(null)
 const scoreBrazilInput = ref(null)
-const scoreMoroccoInput = ref(null)
+const scoreHaitiInput = ref(null)
 const submitBtn = ref(null)
 const nameErr = ref(null)
 const waErr = ref(null)
+const vehicleErr = ref(null)
 const scoreErr = ref(null)
 const submitStatus = ref(null)
 
 onMounted(() => {
-  const colors = ['#facc07','#22c55e','#ffffff','#fbbf24','#86efac','#fde047']
+  const colors = ['#0057b8','#d71920','#ffffff','#facc07','#1d4ed8','#ef4444']
   for (let i = 0; i < 28; i++) {
     const el = document.createElement('div')
     el.className = 'confetti-piece'
@@ -274,7 +288,7 @@ onMounted(() => {
     else this.value = '(' + v.substring(0,2) + ') ' + v.substring(2,7) + '-' + v.substring(7)
   })
 
-  const scoreInputs = [scoreBrazilInput.value, scoreMoroccoInput.value]
+  const scoreInputs = [scoreBrazilInput.value, scoreHaitiInput.value]
   scoreInputs.forEach((input, idx) => {
     input?.addEventListener('input', function() {
       this.value = this.value.replace(/\D/g, '').substring(0, 2)
@@ -296,11 +310,12 @@ onMounted(() => {
 
   nameInput.value?.addEventListener('input', () => clearError(nameInput.value, nameErr.value))
   whatsappInput.value?.addEventListener('input', () => clearError(whatsappInput.value, waErr.value))
+  vehicleInput.value?.addEventListener('change', () => clearError(vehicleInput.value, vehicleErr.value))
 
   scoreInputs.forEach(input => {
     input?.addEventListener('input', () => {
       scoreBrazilInput.value?.classList.remove('error')
-      scoreMoroccoInput.value?.classList.remove('error')
+      scoreHaitiInput.value?.classList.remove('error')
       scoreErr.value?.classList.remove('visible')
     })
   })
@@ -318,7 +333,7 @@ onMounted(() => {
   }
 
   function burstConfetti() {
-    const burstColors = ['#facc07','#22c55e','#ffffff','#fbbf24','#86efac']
+    const burstColors = ['#0057b8','#d71920','#ffffff','#facc07','#1d4ed8']
     for (let i = 0; i < 40; i++) {
       const el = document.createElement('div')
       el.className = 'confetti-piece'
@@ -339,7 +354,10 @@ onMounted(() => {
   function showSuccess() {
     if (formCard.value) formCard.value.style.display = 'none'
     successCard.value?.classList.add('visible')
-    successCard.value?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    if (successCard.value) {
+      const top = successCard.value.getBoundingClientRect().top + window.pageYOffset - 80
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
     burstConfetti()
   }
 
@@ -350,8 +368,9 @@ onMounted(() => {
 
     const name = nameInput.value?.value.trim() || ''
     const wa = whatsappInput.value?.value.replace(/\D/g,'') || ''
+    const vehicle = vehicleInput.value?.value || ''
     const sb = scoreBrazilInput.value?.value.trim() || ''
-    const sm = scoreMoroccoInput.value?.value.trim() || ''
+    const sh = scoreHaitiInput.value?.value.trim() || ''
 
     if (!name || name.split(' ').length < 2) {
       showError(nameInput.value, nameErr.value)
@@ -367,14 +386,21 @@ onMounted(() => {
       clearError(whatsappInput.value, waErr.value)
     }
 
-    if (sb === '' || sm === '') {
+    if (!vehicle) {
+      showError(vehicleInput.value, vehicleErr.value)
+      valid = false
+    } else {
+      clearError(vehicleInput.value, vehicleErr.value)
+    }
+
+    if (sb === '' || sh === '') {
       scoreBrazilInput.value?.classList.add('error')
-      scoreMoroccoInput.value?.classList.add('error')
+      scoreHaitiInput.value?.classList.add('error')
       scoreErr.value?.classList.add('visible')
       valid = false
     } else {
       scoreBrazilInput.value?.classList.remove('error')
-      scoreMoroccoInput.value?.classList.remove('error')
+      scoreHaitiInput.value?.classList.remove('error')
       scoreErr.value?.classList.remove('visible')
     }
 
@@ -393,9 +419,10 @@ onMounted(() => {
     const payload = new URLSearchParams({
       nome: name,
       whatsapp: wa,
+      veiculo: vehicle,
       placarBrasil: sb,
-      placarMarrocos: sm,
-      palpite: sb + ' x ' + sm,
+      placarHaiti: sh,
+      palpite: sb + ' x ' + sh,
       origem: window.location.href,
       dataEnvio: new Date().toISOString()
     })
