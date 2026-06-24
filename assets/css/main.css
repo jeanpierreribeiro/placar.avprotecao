@@ -3,9 +3,9 @@
     --green-field:  #082456;
     --green-mid:    #0b3f8f;
     --green-bright: #22c55e;
-    --haiti-blue:   #0057b8;
-    --haiti-red:    #d71920;
-    --haiti-white:  #f8fafc;
+    --scotland-blue:#005eb8;
+    --scotland-navy:#003865;
+    --scotland-white:#f8fafc;
     --yellow:       #facc07;
     --yellow-dark:  #e0b800;
     --white:        #ffffff;
@@ -36,7 +36,7 @@
     pointer-events: none;
     background:
       linear-gradient(180deg, rgba(7,23,53,0.52), rgba(7,23,53,0.9)),
-      url('/imagem-bola-haiti.png') center center / cover no-repeat;
+      url('/imagem-bola-escocia.png') center center / cover no-repeat;
   }
 
   /* Field texture - subtle lines */
@@ -68,7 +68,7 @@
     inset: 0;
     background:
       radial-gradient(ellipse 60% 50% at 15% 0%, rgba(250,204,7,0.07) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 50% at 85% 0%, rgba(215,25,32,0.14) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 85% 0%, rgba(0,94,184,0.18) 0%, transparent 70%),
       radial-gradient(ellipse 80% 60% at 50% 100%, rgba(7,23,53,0.9) 0%, transparent 70%);
   }
 
@@ -268,7 +268,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--haiti-blue), var(--haiti-white), var(--haiti-red));
+    background: linear-gradient(90deg, #009c3b, var(--yellow), var(--scotland-blue), var(--scotland-white));
     background-size: 200% 100%;
     animation: shimmer 3s linear infinite;
   }
@@ -405,7 +405,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0,87,184,0.1) 0%, rgba(215,25,32,0.06) 45%, transparent 72%);
+    background: linear-gradient(135deg, rgba(0,156,59,0.1) 0%, rgba(0,94,184,0.1) 45%, transparent 72%);
     pointer-events: none;
   }
 
@@ -459,34 +459,21 @@
     transform: translate(-50%, -50%);
   }
 
-  /* Haiti flag */
-  .flag-haiti {
-    background: linear-gradient(180deg, var(--haiti-blue) 0 50%, var(--haiti-red) 50% 100%);
+  /* Scotland flag */
+  .flag-scotland {
+    background: var(--scotland-blue);
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-  .flag-haiti::before {
+  .flag-scotland::before,
+  .flag-scotland::after {
     content: '';
-    width: 15px;
-    height: 10px;
-    background: var(--haiti-white);
-    border-radius: 1px;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
     position: absolute;
+    inset: 0;
+    background: var(--scotland-white);
+    clip-path: polygon(0 0, 14% 0, 100% 78%, 100% 100%, 86% 100%, 0 22%);
   }
-  .flag-haiti::after {
-    content: '';
-    width: 7px;
-    height: 5px;
-    background: linear-gradient(90deg, var(--haiti-blue) 0 50%, var(--haiti-red) 50% 100%);
-    border-radius: 1px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 1;
+  .flag-scotland::after {
+    clip-path: polygon(86% 0, 100% 0, 100% 22%, 14% 100%, 0 100%, 0 78%);
   }
 
   .score-name {
@@ -725,7 +712,7 @@
   /* ─── OFFER BLOCK ─── */
   .offer-block {
     margin-top: 40px;
-    background: linear-gradient(135deg, rgba(0,87,184,0.16) 0%, rgba(215,25,32,0.1) 52%, rgba(250,204,7,0.06) 100%);
+    background: linear-gradient(135deg, rgba(0,156,59,0.14) 0%, rgba(0,94,184,0.16) 52%, rgba(250,204,7,0.06) 100%);
     border: 1.5px solid rgba(248,250,252,0.24);
     border-radius: 20px;
     padding: 28px 24px;
@@ -741,7 +728,7 @@
     top: -40px; right: -40px;
     width: 120px;
     height: 120px;
-    background: radial-gradient(circle, rgba(215,25,32,0.18) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0,94,184,0.22) 0%, transparent 70%);
     border-radius: 50%;
   }
 

@@ -53,7 +53,7 @@
       <span class="highlight">o placar?</span>
     </h1>
 
-    <p class="hero-sub">Comente seu palpite para Brasil x Haiti e participe da campanha da AVEP.</p>
+    <p class="hero-sub">Comente seu palpite para Brasil x Escócia e participe da campanha da AVEP.</p>
     <p class="hero-promo">🏆 Acerte o placar e ganhe na hora <strong>75% de desconto</strong> na adesão!</p>
 
     <!-- Form card -->
@@ -107,18 +107,18 @@
             </div>
             <div class="score-separator">×</div>
             <div class="score-team">
-              <div class="score-flag flag-haiti"></div>
-              <span class="score-name">Haiti</span>
+              <div class="score-flag flag-scotland"></div>
+              <span class="score-name">Escócia</span>
               <input
                 type="text"
                 inputmode="numeric"
                 class="score-input"
-                ref="scoreHaitiInput"
-                id="scoreHaiti"
-                name="scoreHaiti"
+                ref="scoreScotlandInput"
+                id="scoreScotland"
+                name="scoreScotland"
                 maxlength="2"
                 placeholder="0"
-                aria-label="Placar do Haiti"
+                aria-label="Placar da Escócia"
               >
             </div>
           </div>
@@ -161,7 +161,7 @@
         </div>
         <div class="step-card">
           <div class="step-num">2</div>
-          <p class="step-text">Informe seu palpite Brasil x Haiti</p>
+          <p class="step-text">Informe seu palpite Brasil x Escócia</p>
         </div>
         <div class="step-card">
           <div class="step-num">3</div>
@@ -175,10 +175,10 @@
     </div>
 
     <!-- Offer block -->
-    <!-- Imagem da campanha: salve o arquivo como "imagem-jogadores-haiti.png" na mesma pasta do HTML -->
+    <!-- Imagem da campanha: salve o arquivo como "imagem-jogadores-escocia.png" na mesma pasta do HTML -->
     <div class="offer-block">
       <div class="offer-img-wrap">
-        <img src="/imagem-jogadores-haiti.png" alt="Jogadores disputando a bola - Brasil x Haiti" onerror="this.parentElement.style.display='none'">
+        <img src="/imagem-jogadores-escocia.png" alt="Jogadores disputando a bola - Brasil x Escócia" onerror="this.parentElement.style.display='none'">
       </div>
       <div class="offer-badge">75%</div>
       <h2 class="offer-title">Condição especial do Mês da Torcida</h2>
@@ -202,20 +202,20 @@
 <script setup>
 useHead({
   htmlAttrs: { lang: 'pt-BR' },
-  title: 'Placar da Torcida AVEP - Brasil x Haiti',
+  title: 'Placar da Torcida AVEP - Brasil x Escócia',
   meta: [
     { charset: 'UTF-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-    { name: 'description', content: 'Comente seu palpite para Brasil x Haiti e participe da campanha da AVEP. Acerte o placar e ganhe 75% de desconto na adesão.' },
+    { name: 'description', content: 'Comente seu palpite para Brasil x Escócia e participe da campanha da AVEP. Acerte o placar e ganhe 75% de desconto na adesão.' },
     { name: 'robots', content: 'index, follow' },
-    { property: 'og:title', content: 'Placar da Torcida AVEP - Brasil x Haiti' },
-    { property: 'og:description', content: 'Comente seu palpite para Brasil x Haiti e participe da campanha da AVEP.' },
+    { property: 'og:title', content: 'Placar da Torcida AVEP - Brasil x Escócia' },
+    { property: 'og:description', content: 'Comente seu palpite para Brasil x Escócia e participe da campanha da AVEP.' },
     { property: 'og:type', content: 'website' },
-    { property: 'og:image', content: '/imagem-jogadores-haiti.png' },
+    { property: 'og:image', content: '/imagem-jogadores-escocia.png' },
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: 'Placar da Torcida AVEP - Brasil x Haiti' },
-    { name: 'twitter:description', content: 'Comente seu palpite para Brasil x Haiti e participe da campanha da AVEP.' },
-    { name: 'twitter:image', content: '/imagem-jogadores-haiti.png' }
+    { name: 'twitter:title', content: 'Placar da Torcida AVEP - Brasil x Escócia' },
+    { name: 'twitter:description', content: 'Comente seu palpite para Brasil x Escócia e participe da campanha da AVEP.' },
+    { name: 'twitter:image', content: '/imagem-jogadores-escocia.png' }
   ],
   link: [
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -245,7 +245,7 @@ fbq('track', 'PageView');`,
   ]
 })
 
-const SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbycVIZ8ukyevSpheCliYX6qmmGk7oYCujpLxj-681RtjUlkTHUeU7_fOzo8LtwRj9gQ/exec'
+const SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyRCzBz2aA19H9uckIF19R18YZOFPJviAT29P0H49IT8gbB37ccbb9_JtyJf_Rq2yRP/exec'
 
 const confettiContainer = ref(null)
 const formCard = ref(null)
@@ -255,7 +255,7 @@ const nameInput = ref(null)
 const whatsappInput = ref(null)
 const vehicleInput = ref(null)
 const scoreBrazilInput = ref(null)
-const scoreHaitiInput = ref(null)
+const scoreScotlandInput = ref(null)
 const submitBtn = ref(null)
 const nameErr = ref(null)
 const waErr = ref(null)
@@ -264,7 +264,7 @@ const scoreErr = ref(null)
 const submitStatus = ref(null)
 
 onMounted(() => {
-  const colors = ['#0057b8','#d71920','#ffffff','#facc07','#1d4ed8','#ef4444']
+  const colors = ['#009c3b','#ffdf00','#002776','#005eb8','#ffffff']
   for (let i = 0; i < 28; i++) {
     const el = document.createElement('div')
     el.className = 'confetti-piece'
@@ -288,7 +288,7 @@ onMounted(() => {
     else this.value = '(' + v.substring(0,2) + ') ' + v.substring(2,7) + '-' + v.substring(7)
   })
 
-  const scoreInputs = [scoreBrazilInput.value, scoreHaitiInput.value]
+  const scoreInputs = [scoreBrazilInput.value, scoreScotlandInput.value]
   scoreInputs.forEach((input, idx) => {
     input?.addEventListener('input', function() {
       this.value = this.value.replace(/\D/g, '').substring(0, 2)
@@ -315,7 +315,7 @@ onMounted(() => {
   scoreInputs.forEach(input => {
     input?.addEventListener('input', () => {
       scoreBrazilInput.value?.classList.remove('error')
-      scoreHaitiInput.value?.classList.remove('error')
+      scoreScotlandInput.value?.classList.remove('error')
       scoreErr.value?.classList.remove('visible')
     })
   })
@@ -333,7 +333,7 @@ onMounted(() => {
   }
 
   function burstConfetti() {
-    const burstColors = ['#0057b8','#d71920','#ffffff','#facc07','#1d4ed8']
+    const burstColors = ['#009c3b','#ffdf00','#002776','#005eb8','#ffffff']
     for (let i = 0; i < 40; i++) {
       const el = document.createElement('div')
       el.className = 'confetti-piece'
@@ -370,7 +370,7 @@ onMounted(() => {
     const wa = whatsappInput.value?.value.replace(/\D/g,'') || ''
     const vehicle = vehicleInput.value?.value || ''
     const sb = scoreBrazilInput.value?.value.trim() || ''
-    const sh = scoreHaitiInput.value?.value.trim() || ''
+    const ss = scoreScotlandInput.value?.value.trim() || ''
 
     if (!name || name.split(' ').length < 2) {
       showError(nameInput.value, nameErr.value)
@@ -393,14 +393,14 @@ onMounted(() => {
       clearError(vehicleInput.value, vehicleErr.value)
     }
 
-    if (sb === '' || sh === '') {
+    if (sb === '' || ss === '') {
       scoreBrazilInput.value?.classList.add('error')
-      scoreHaitiInput.value?.classList.add('error')
+      scoreScotlandInput.value?.classList.add('error')
       scoreErr.value?.classList.add('visible')
       valid = false
     } else {
       scoreBrazilInput.value?.classList.remove('error')
-      scoreHaitiInput.value?.classList.remove('error')
+      scoreScotlandInput.value?.classList.remove('error')
       scoreErr.value?.classList.remove('visible')
     }
 
@@ -416,22 +416,31 @@ onMounted(() => {
       return
     }
 
-    const payload = new URLSearchParams({
+    const payload = {
       nome: name,
       whatsapp: wa,
       veiculo: vehicle,
+      jogo: 'Brasil x Escócia',
+      timeA: 'Brasil',
+      timeB: 'Escócia',
+      brasil: sb,
+      escocia: ss,
       placarBrasil: sb,
-      placarHaiti: sh,
-      palpite: sb + ' x ' + sh,
+      placarEscocia: ss,
+      agregado: sb + ' x ' + ss,
+      palpite: sb + ' x ' + ss,
       origem: window.location.href,
       dataEnvio: new Date().toISOString()
-    })
+    }
 
     try {
       await fetch(SHEETS_WEB_APP_URL, {
         method: 'POST',
         mode: 'no-cors',
-        body: payload
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify(payload)
       })
       showSuccess()
     } catch (error) {
